@@ -5,20 +5,20 @@ import 'package:fudiee/screens/home/widgets/app_header.dart';
 import 'package:fudiee/screens/home/widgets/category_card.dart';
 import 'package:fudiee/screens/home/widgets/search_bar.dart';
 
-import '../components/header_section.dart';
-import '../components/offers_section.dart';
-import '../widgets/popular_now_card.dart';
+import 'components/header_section.dart';
+import 'components/offers_section.dart';
+import '../../widgets/popular_now_card.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class HomeView extends StatefulWidget {
+  const HomeView({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeViewState extends State<HomeView> {
   String seletedCategory = '';
   List<String> favorites = [];
 

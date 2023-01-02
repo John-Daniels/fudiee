@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/screens/home/components/bottom_app_bar.dart';
-import 'package:fudiee/screens/home/pages/cart.dart';
-import 'package:fudiee/screens/home/pages/home.dart';
+import 'package:fudiee/screens/home/views/home/components/bottom_app_bar.dart';
+import 'package:fudiee/screens/home/views/cart/cart_view.dart';
+import 'package:fudiee/screens/home/views/home/home_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -44,9 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: BuildPages(
           currentPage: currentBottomIndex,
           pages: const [
-            HomePage(),
+            HomeView(),
             SizedBox(child: Center(child: CircularProgressIndicator())),
-            CartPage(),
+            CartView(),
             SizedBox(child: Center(child: CircularProgressIndicator())),
             SizedBox(child: Center(child: CircularProgressIndicator())),
           ],
@@ -80,6 +80,7 @@ class BuildPages extends StatelessWidget {
       controller: pageController,
       onPageChanged: onPageChanged,
       pageSnapping: true,
+      restorationId: 'home_screen',
       children: pages,
     );
   }

@@ -66,11 +66,11 @@ class NotificationBell extends StatelessWidget {
         ),
         if (isActive)
           const Positioned(
-            top: 2.5,
+            top: 3.4,
             right: 5,
             child: CircleAvatar(
               backgroundColor: Colors.pink,
-              radius: 3.5,
+              radius: 4,
             ),
           )
       ],

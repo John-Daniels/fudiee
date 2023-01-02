@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/constants/assets_constant.dart';
 import 'package:fudiee/screens/home/widgets/category_card.dart';
 import 'package:fudiee/themes/app_colors.dart';
 import 'package:fudiee/widgets/buttons/app_icon_button.dart';
@@ -80,11 +79,9 @@ class PopularNowCard extends StatelessWidget {
                       ],
                     ),
                     AppIconButton(
-                      icon: Image.asset(
-                        Assets.addIconActive,
-                        // width: 20,
-                        height: 20,
-                        fit: BoxFit.cover,
+                      icon: const Icon(
+                        Icons.add_circle_rounded,
+                        color: Colors.pink,
                       ),
                       onPressed: onPressed,
                     ),

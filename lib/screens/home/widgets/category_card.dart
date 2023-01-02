@@ -18,8 +18,12 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
+    return Container(
       clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [lightBoxShadow],
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
         child: Material(
@@ -29,10 +33,7 @@ class CategoryCard extends StatelessWidget {
             child: Ink(
               width: 119,
               // alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: selected ? lightAmberColor : Colors.white,
-                boxShadow: [lightBoxShadow],
-              ),
+              color: selected ? lightAmberColor : Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -1,4 +1,5 @@
 import 'package:fudiee/constants/assets_constant.dart';
+import 'package:fudiee/models/cart_model.dart';
 import 'package:fudiee/models/category_model.dart';
 import 'package:fudiee/models/offer_model.dart';
 import 'package:fudiee/models/onboarding_model.dart';
@@ -75,5 +76,42 @@ List<PopularModel> popularData = [
     deliveryTime: 5,
     price: 12,
     image: Assets.onb2,
+  ),
+];
+
+List<Cart> cartData = [
+  Cart(
+    image: Assets.cheezePizza,
+    title: 'Cheese Pizza',
+    desc:
+        'Our Cheeze Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.',
+    price: 12,
+    rating: 4,
+  ),
+  Cart(
+    image: Assets.veggiePizza,
+    title: 'Veggie Pizza',
+    desc: '''Our Veggie Pizza is baked specially for you, with pure
+natural and fresh ingredients to satisfy your cravings 
+while maintaining your healthy living.''',
+    price: 15,
+    rating: 4,
+  ),
+  Cart(
+    image: Assets.meatPizza,
+    title: 'Meat Pizza',
+    desc: '''Our Meat Pizza is baked specially for you, with pure
+natural and fresh ingredients to satisfy your cravings 
+while maintaining your healthy living.''',
+    price: 20,
+    rating: 4,
+  ),
+  Cart(
+    image: Assets.pepperoniPizza,
+    title: 'Pepperoni Pizza',
+    desc:
+        'Our Pepperoni Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.',
+    price: 16,
+    rating: 4,
   ),
 ];
