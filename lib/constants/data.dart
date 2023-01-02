@@ -63,19 +63,19 @@ List<PopularModel> popularData = [
     title: 'African Salad',
     deliveryTime: 10,
     price: 20,
-    image: Assets.authBg,
+    image: Assets.salad,
   ),
   PopularModel(
     title: 'Jellof Rice',
     deliveryTime: 15,
     price: 35,
-    image: Assets.onb2,
+    image: Assets.jollofRice,
   ),
   PopularModel(
     title: 'Pizza',
     deliveryTime: 5,
     price: 12,
-    image: Assets.onb2,
+    image: Assets.pizza2,
   ),
 ];
 

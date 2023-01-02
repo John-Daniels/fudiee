@@ -39,12 +39,18 @@ class PopularNowCard extends StatelessWidget {
           // padding: EdgeInsets.zero,
           child: Column(
             children: [
-              FadeInImage(
-                placeholder: AssetImage(image),
-                image: AssetImage(image),
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: 145,
+              Transform.translate(
+                offset: const Offset(0, -8),
+                child: Transform.scale(
+                  scale: 1.2,
+                  child: FadeInImage(
+                    placeholder: AssetImage(image),
+                    image: AssetImage(image),
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: 145,
+                  ),
+                ),
               ),
               Container(
                 padding: const EdgeInsets.symmetric(

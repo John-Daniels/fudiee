@@ -49,8 +49,8 @@ class AppBottomBar extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             label: 'Search',
-            icon: Icon(Icons.search_outlined),
-            activeIcon: BottomBarIndicator(icon: Icon(Icons.search)),
+            icon: Icon(CupertinoIcons.search),
+            activeIcon: BottomBarIndicator(icon: Icon(CupertinoIcons.search)),
           ),
           BottomNavigationBarItem(
             label: 'Profile',

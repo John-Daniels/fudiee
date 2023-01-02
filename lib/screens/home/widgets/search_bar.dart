@@ -20,7 +20,7 @@ class SearchBar extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 18,
         ),
-        hintText: 'Search, -> Grilled chicken -> Pizza',
+        hintText: 'Search -> Grilled chicken -> Pizza',
         suffixIcon: Image.asset(Assets.searchIcon),
       ),
     );
