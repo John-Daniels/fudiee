@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fudiee',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.buildTheme(context),
       initialRoute: SplashScreen.routeName,

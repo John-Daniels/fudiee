@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fudiee/constants/data.dart';
-import 'package:fudiee/screens/home/components/app_circle_image.dart';
-import 'package:fudiee/screens/home/components/app_header.dart';
-import 'package:fudiee/screens/home/components/offer_card.dart';
-import 'package:fudiee/screens/home/components/search_bar.dart';
-import 'package:fudiee/themes/app_colors.dart';
-import 'package:get/get.dart';
+import 'package:fudiee/screens/home/components/bottom_app_bar.dart';
+import 'package:fudiee/screens/home/pages/cart.dart';
+import 'package:fudiee/screens/home/pages/home.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,188 +13,74 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var seletedCategory = '';
+  // buttom nav bar... index
+  var currentBottomIndex = 0;
+  PageController pageController = PageController(initialPage: 0);
+
+  void switchPage(value) {
+    setState(() => currentBottomIndex = value);
+    pageController.animateToPage(
+      currentBottomIndex,
+      duration: const Duration(milliseconds: 100),
+      curve: Curves.easeOut,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 26),
-          height: Get.height,
-          child: Column(
-            children: [
-              const SizedBox(height: 80),
-              const AvaterHeaderWithNotifications(),
-              const SizedBox(height: 35),
-              const SearchBar(),
-              const SizedBox(height: 30),
-              // offers section
-              const OffersSection(),
-              const SizedBox(height: 30),
-              HeaderSection(
-                onPressed: () {},
-                title: 'Categories',
-              ),
-
-              // categories section
-              SizedBox(
-                height: 115,
-                child: ListView.separated(
-                  clipBehavior: Clip.none,
-                  physics: const BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 4,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(width: 23),
-                  itemBuilder: (context, index) {
-                    final category = categoryData[index];
-                    return CategoryCard(
-                      category: category.category,
-                      image: category.image,
-                      onSelected: (value) {
-                        print(value);
-                        setState(() {
-                          if (value) {
-                            seletedCategory = category.category;
-                          } else {
-                            seletedCategory = '';
-                          }
-                        });
-                      },
-                      selected:
-                          seletedCategory == category.category ? true : false,
-                    );
-                  },
-                ),
-              ),
-
-              //
-              HeaderSection(
-                onPressed: () {},
-                title: 'Popular Now',
-              ),
-            ],
-          ),
-        ),
+      bottomNavigationBar: AppBottomBar(
+        currentBottomIndex: currentBottomIndex,
+        onTap: (value) => switchPage(value),
       ),
-    );
-  }
-}
-
-class CategoryCard extends StatelessWidget {
-  const CategoryCard({
-    Key? key,
-    required this.category,
-    required this.image,
-    required this.selected,
-    required this.onSelected,
-  }) : super(key: key);
-
-  final String category;
-  final String image;
-  final bool selected;
-  final ValueChanged onSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => onSelected(!selected),
-      borderRadius: BorderRadius.circular(15),
-      child: Ink(
-        width: 119,
-        // alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: selected ? lightAmberColor : Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 5,
-              spreadRadius: 1,
-              color: greyColor.withOpacity(0.5),
-              offset: const Offset(0, 1),
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AppCircleImage(image: image),
-            Text(category),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class HeaderSection extends StatelessWidget {
-  const HeaderSection({
-    Key? key,
-    required this.title,
-    required this.onPressed,
-  }) : super(key: key);
-
-  final String title;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          TextButton(
-            onPressed: onPressed,
-            child: Text(
-              'See All',
-              style: TextStyle(
-                color: primaryColor,
-                fontSize: 14,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class OffersSection extends StatelessWidget {
-  const OffersSection({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      // padding: const EdgeInsets.only(left: 26),
-      height: MediaQuery.of(context).size.height * 0.18,
-      child: ListView.separated(
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
-        clipBehavior: Clip.none,
-        scrollDirection: Axis.horizontal,
-        itemCount: 2,
-        separatorBuilder: (context, index) => const SizedBox(width: 28),
-        itemBuilder: (context, index) {
-          final offer = offerData[index];
-          return OfferCard(
-            image: offer.image,
-            percentOff: offer.percentOff,
-            onPressed: () {},
-            offer: offer.offer,
-          );
+      body: WillPopScope(
+        onWillPop: () async {
+          if (currentBottomIndex > 0) {
+            switchPage(0);
+            return false;
+          }
+          return true;
         },
+        child: BuildPages(
+          currentPage: currentBottomIndex,
+          pages: const [
+            HomePage(),
+            SizedBox(child: Center(child: CircularProgressIndicator())),
+            CartPage(),
+            SizedBox(child: Center(child: CircularProgressIndicator())),
+            SizedBox(child: Center(child: CircularProgressIndicator())),
+          ],
+          onPageChanged: (value) =>
+              setState(() => currentBottomIndex = value.round()),
+          pageController: pageController,
+        ),
       ),
+    );
+  }
+}
+
+class BuildPages extends StatelessWidget {
+  const BuildPages({
+    super.key,
+    required this.currentPage,
+    required this.pages,
+    required this.onPageChanged,
+    required this.pageController,
+  });
+
+  final int currentPage;
+  final List<Widget> pages;
+  final ValueChanged<int> onPageChanged;
+  final PageController pageController;
+
+  @override
+  Widget build(BuildContext context) {
+    return PageView(
+      clipBehavior: Clip.antiAlias,
+      controller: pageController,
+      onPageChanged: onPageChanged,
+      pageSnapping: true,
+      children: pages,
     );
   }
 }

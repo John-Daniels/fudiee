@@ -7,6 +7,7 @@ class Assets {
   static String onb3 = '$imagePath/onboarding3.png';
   static String authBg = '$imagePath/auth_bg.png';
   static String profilePic = '$imagePath/profile_pic.png';
+  static String profilePic1 = '$imagePath/me.jpg';
 
   static String cake1 = '$imagePath/cake1.png';
   static String pizza1 = '$imagePath/pizza1.png';
@@ -19,4 +20,11 @@ class Assets {
 
   static String badgedNotif = '$iconPath/badged_notif.png';
   static String searchIcon = '$iconPath/search_icon.png';
+  static String addIconActive = '$iconPath/add_icon_active.png';
+  static String addIconInactive = '$iconPath/add_icon_inactive.png';
+  static String favoriteIcon = '$iconPath/favorite.png';
+  static String homeIcon = '$iconPath/home.png';
+  static String cartIcon = '$iconPath/cart_icon.png';
+  static String search2Icon = '$iconPath/search2.png';
+  static String profileIcon = '$iconPath/profile.png';
 }

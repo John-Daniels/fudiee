@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudiee/constants/assets_constant.dart';
-import 'package:fudiee/screens/home/components/app_circle_image.dart';
+import 'package:fudiee/screens/home/widgets/app_circle_image.dart';
 
 class AvaterHeaderWithNotifications extends StatelessWidget {
   const AvaterHeaderWithNotifications({
@@ -36,7 +37,42 @@ class AvaterHeaderWithNotifications extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        Image.asset(Assets.badgedNotif),
+        // Image.asset(Assets.badgedNotif),
+        IconButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {},
+          icon: const NotificationBell(isActive: true),
+        ),
+      ],
+    );
+  }
+}
+
+class NotificationBell extends StatelessWidget {
+  const NotificationBell({
+    Key? key,
+    this.isActive = false,
+  }) : super(key: key);
+
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        const Icon(
+          CupertinoIcons.bell,
+          size: 27,
+        ),
+        if (isActive)
+          const Positioned(
+            top: 2.5,
+            right: 5,
+            child: CircleAvatar(
+              backgroundColor: Colors.pink,
+              radius: 3.5,
+            ),
+          )
       ],
     );
   }

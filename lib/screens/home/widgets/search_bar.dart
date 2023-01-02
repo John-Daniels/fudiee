@@ -11,11 +11,10 @@ class SearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+        enabledBorder: _inputBorder,
+        focusedBorder: _inputBorder.copyWith(
           borderSide: BorderSide(
-            color: primaryColor.withOpacity(0.3),
-            width: 0.8,
+            color: primaryColor.withOpacity(0.4),
           ),
         ),
         contentPadding: const EdgeInsets.symmetric(
@@ -27,3 +26,11 @@ class SearchBar extends StatelessWidget {
     );
   }
 }
+
+var _inputBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(30),
+  borderSide: BorderSide(
+    color: primaryColor.withOpacity(0.3),
+    width: 0.8,
+  ),
+);

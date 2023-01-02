@@ -2,6 +2,7 @@ import 'package:fudiee/constants/assets_constant.dart';
 import 'package:fudiee/models/category_model.dart';
 import 'package:fudiee/models/offer_model.dart';
 import 'package:fudiee/models/onboarding_model.dart';
+import 'package:fudiee/models/popular_model.dart';
 
 List<OnboardingInfoData> onboardingData = [
   OnboardingInfoData(
@@ -53,5 +54,26 @@ List<CategoryModel> categoryData = [
   CategoryModel(
     category: 'Fruits',
     image: Assets.fruits,
+  ),
+];
+
+List<PopularModel> popularData = [
+  PopularModel(
+    title: 'African Salad',
+    deliveryTime: 10,
+    price: 20,
+    image: Assets.authBg,
+  ),
+  PopularModel(
+    title: 'Jellof Rice',
+    deliveryTime: 15,
+    price: 35,
+    image: Assets.onb2,
+  ),
+  PopularModel(
+    title: 'Pizza',
+    deliveryTime: 5,
+    price: 12,
+    image: Assets.onb2,
   ),
 ];
