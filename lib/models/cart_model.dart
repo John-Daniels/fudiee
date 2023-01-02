@@ -4,12 +4,14 @@ class Cart {
     required this.title,
     required this.desc,
     required this.price,
-    required this.rating,
+    this.rating = 1,
+    this.itemCount = 1,
   });
 
-  final String image;
-  final String title;
-  final String desc;
-  final double price;
-  final double rating;
+  String image;
+  String title;
+  String desc;
+  double price;
+  double rating;
+  int itemCount;
 }

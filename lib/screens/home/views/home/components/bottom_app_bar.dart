@@ -15,10 +15,10 @@ class AppBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 65,
+      height: 88,
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: primaryColor.withOpacity(0.5), width: 0.6),
+          top: BorderSide(color: primaryColor.withOpacity(0.8), width: 0.6),
         ),
       ),
       child: BottomNavigationBar(

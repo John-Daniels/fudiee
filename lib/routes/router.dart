@@ -1,3 +1,4 @@
+import 'package:fudiee/controllers/cart/cart_controller.dart';
 import 'package:fudiee/screens/auth/auth_screen.dart';
 import 'package:fudiee/screens/home/home_screen.dart';
 import 'package:fudiee/screens/onboarding/onboarding_screen.dart';
@@ -27,6 +28,9 @@ class AppRouter {
           page: () => const HomeScreen(),
           transition: Transition.rightToLeftWithFade,
           transitionDuration: const Duration(milliseconds: 600),
+          binding: BindingsBuilder(() {
+            Get.put(CartController());
+          }),
         ),
       ];
 }

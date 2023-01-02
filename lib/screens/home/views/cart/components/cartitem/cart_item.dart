@@ -44,12 +44,16 @@ class CartItem extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
               children: [
-                BuildPriceAndCartActions(price: price),
+                BuildPriceAndCartActions(
+                  price: price,
+                  index: index,
+                ),
                 SizedBox(height: 34.h),
                 BuildDescriptionsAndRatings(
                   title: title,
                   desc: desc,
                   rating: rating,
+                  index: index,
                 ),
                 SizedBox(height: 25.h),
                 const AddYourMeal(),

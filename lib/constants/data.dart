@@ -86,7 +86,7 @@ List<Cart> cartData = [
     desc:
         'Our Cheeze Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.',
     price: 12,
-    rating: 4,
+    rating: 4.5,
   ),
   Cart(
     image: Assets.veggiePizza,
@@ -95,7 +95,7 @@ List<Cart> cartData = [
 natural and fresh ingredients to satisfy your cravings 
 while maintaining your healthy living.''',
     price: 15,
-    rating: 4,
+    rating: 3.5,
   ),
   Cart(
     image: Assets.meatPizza,
@@ -104,7 +104,7 @@ while maintaining your healthy living.''',
 natural and fresh ingredients to satisfy your cravings 
 while maintaining your healthy living.''',
     price: 20,
-    rating: 4,
+    rating: 4.5,
   ),
   Cart(
     image: Assets.pepperoniPizza,
@@ -112,6 +112,6 @@ while maintaining your healthy living.''',
     desc:
         'Our Pepperoni Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.',
     price: 16,
-    rating: 4,
+    rating: 5,
   ),
 ];
