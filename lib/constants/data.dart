@@ -1,7 +1,9 @@
 import 'package:fudiee/constants/assets_constant.dart';
+import 'package:fudiee/models/cart_model.dart';
 import 'package:fudiee/models/category_model.dart';
 import 'package:fudiee/models/offer_model.dart';
 import 'package:fudiee/models/onboarding_model.dart';
+import 'package:fudiee/models/popular_model.dart';
 
 List<OnboardingInfoData> onboardingData = [
   OnboardingInfoData(
@@ -53,5 +55,63 @@ List<CategoryModel> categoryData = [
   CategoryModel(
     category: 'Fruits',
     image: Assets.fruits,
+  ),
+];
+
+List<PopularModel> popularData = [
+  PopularModel(
+    title: 'African Salad',
+    deliveryTime: 10,
+    price: 20,
+    image: Assets.salad,
+  ),
+  PopularModel(
+    title: 'Jellof Rice',
+    deliveryTime: 15,
+    price: 35,
+    image: Assets.jollofRice,
+  ),
+  PopularModel(
+    title: 'Pizza',
+    deliveryTime: 5,
+    price: 12,
+    image: Assets.pizza2,
+  ),
+];
+
+List<Cart> cartData = [
+  Cart(
+    image: Assets.cheezePizza,
+    title: 'Cheese Pizza',
+    desc:
+        'Our Cheeze Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.',
+    price: 12,
+    rating: 4.5,
+  ),
+  Cart(
+    image: Assets.veggiePizza,
+    title: 'Veggie Pizza',
+    desc: '''Our Veggie Pizza is baked specially for you, with pure
+natural and fresh ingredients to satisfy your cravings 
+while maintaining your healthy living.''',
+    price: 15,
+    rating: 3.5,
+  ),
+  Cart(
+    image: Assets.meatPizza,
+    title: 'Meat Pizza',
+    desc: '''Our Meat Pizza is baked specially for you, with pure
+natural and fresh ingredients to satisfy your cravings 
+while maintaining your healthy living.''',
+    price: 20,
+    rating: 4.5,
+  ),
+  Cart(
+    image: Assets.pepperoniPizza,
+    title: 'Pepperoni Pizza',
+    desc:
+        'Our Pepperoni Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.',
+    price: 16,
+    rating: 5,
   ),
 ];

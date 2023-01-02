@@ -29,10 +29,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         var currentPage = pageController.page!.round();
         pageController.animateToPage(
           currentPage != lastPage ? currentPage + 1 : 0,
-          duration: const Duration(
-            seconds: 1,
-          ),
-          curve: Curves.easeInOut,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.fastOutSlowIn,
         );
       },
     );
