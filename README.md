@@ -1,4 +1,4 @@
-# fudiee
+# fudiee [![Codemagic build status](https://api.codemagic.io/apps/63b35b446bdbaebb59a1efaa/63b35b446bdbaebb59a1efa9/status_badge.svg)](https://codemagic.io/apps/63b35b446bdbaebb59a1efaa/63b35b446bdbaebb59a1efa9/latest_build)
 
 ## Food Ordering App
 
