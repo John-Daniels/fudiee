@@ -1,16 +1,17 @@
 # fudiee
 
-A new Flutter project.
+## Food Ordering App
 
-## Getting Started
+## screenshots :)
 
-This project is a starting point for a Flutter application.
+![screenshots](./screenshots/Screenshot_1672672991.png)
 
-A few resources to get you started if this is your first Flutter project:
+![screenshots](./screenshots/Screenshot_1672672996.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![screenshots](./screenshots/Screenshot_1672685526.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![screenshots](./screenshots/Screenshot_1672672963.png)
+
+![screenshots](./screenshots/Screenshot_1672672974.png)
+
+![screenshots](./screenshots/Screenshot_1672729669.png)
