@@ -4,14 +4,11 @@
 
 ## screenshots :)
 
-![screenshots](./screenshots/Screenshot_1672672991.png)
+<img src="./screenshots/Screenshot_1672672991.png" width='280px' />
+<img src="./screenshots/Screenshot_1672672996.png" width='280px' />
+<img src="./screenshots/Screenshot_1672685526.png" width='280px' />
+<img src="./screenshots/Screenshot_1672672963.png" width='280px' />
+<img src="./screenshots/Screenshot_1672672974.png" width='280px' />
+<img src="./screenshots/Screenshot_1672729669.png" width='280px' />
 
-![screenshots](./screenshots/Screenshot_1672672996.png)
-
-![screenshots](./screenshots/Screenshot_1672685526.png)
-
-![screenshots](./screenshots/Screenshot_1672672963.png)
-
-![screenshots](./screenshots/Screenshot_1672672974.png)
-
-![screenshots](./screenshots/Screenshot_1672729669.png)
+> `Follow @johnkoder on Twitter`
