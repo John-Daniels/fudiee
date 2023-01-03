@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudiee/themes/app_colors.dart';
 
 class AppBottomBar extends StatelessWidget {
@@ -15,7 +16,7 @@ class AppBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 88,
+      height: 80,
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(color: primaryColor.withOpacity(0.8), width: 0.6),
@@ -26,10 +27,12 @@ class AppBottomBar extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         backgroundColor: scaffoldBgColor,
         fixedColor: primaryColor,
-        unselectedIconTheme: const IconThemeData(size: 25),
-        selectedIconTheme: IconThemeData(color: primaryColor, size: 26),
+        unselectedIconTheme: const IconThemeData(size: 22),
+        selectedIconTheme: IconThemeData(color: primaryColor, size: 24),
         selectedLabelStyle: TextStyle(color: primaryColor),
         unselectedItemColor: const Color(0xFF303030).withOpacity(0.7),
+        selectedFontSize: 12.sp,
+        unselectedFontSize: 11.sp,
         onTap: onTap,
         items: const [
           BottomNavigationBarItem(

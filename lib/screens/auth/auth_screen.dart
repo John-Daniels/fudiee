@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudiee/constants/assets_constant.dart';
 import 'package:fudiee/screens/auth/signin.dart';
 import 'package:fudiee/screens/auth/signup.dart';
@@ -42,67 +43,65 @@ class _AuthScreenState extends State<AuthScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
-        child: SingleChildScrollView(
-          child: SizedBox(
-            height: Get.height,
-            child: Column(
-              children: [
-                SizedBox(
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          height: Get.height,
+          child: Column(
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: Get.height * 0.48,
+                child: Image.asset(
+                  Assets.authBg,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+              Expanded(
+                child: SizedBox(
                   width: double.infinity,
-                  height: Get.height * 0.48,
-                  child: Image.asset(
-                    Assets.authBg,
-                    fit: BoxFit.fitWidth,
+                  // padding: const EdgeInsets.fromLTRB(29, 25, 29, 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.fromLTRB(22.w, 25.h, 29.w, 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            _AuthTabs(
+                              text: 'Sign in',
+                              active: currentTab == 0,
+                              onTap: () {
+                                _tabController.animateTo(0);
+                              },
+                            ),
+                            _AuthTabs(
+                              text: 'Sign up',
+                              active: currentTab == 1,
+                              onTap: () {
+                                _tabController.animateTo(1);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: TabBarView(
+                          controller: _tabController,
+                          physics: const BouncingScrollPhysics(),
+                          children: const [
+                            SignIn(),
+                            Signup(),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Expanded(
-                  child: SizedBox(
-                    width: double.infinity,
-                    // padding: const EdgeInsets.fromLTRB(29, 25, 29, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.fromLTRB(22, 25, 29, 0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              _AuthTabs(
-                                text: 'Sign in',
-                                active: currentTab == 0,
-                                onTap: () {
-                                  _tabController.animateTo(0);
-                                },
-                              ),
-                              _AuthTabs(
-                                text: 'Sign up',
-                                active: currentTab == 1,
-                                onTap: () {
-                                  _tabController.animateTo(1);
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: TabBarView(
-                            controller: _tabController,
-                            physics: const BouncingScrollPhysics(),
-                            children: const [
-                              SignIn(),
-                              Signup(),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),

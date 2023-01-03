@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudiee/themes/app_colors.dart';
 
 class OfferCard extends StatelessWidget {
@@ -18,7 +19,7 @@ class OfferCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.67,
+      width: 260.w,
       // width: 400,
       decoration: BoxDecoration(
         color: primaryColor,
@@ -74,15 +75,15 @@ class OfferCard extends StatelessWidget {
               )
             ],
           ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            height: 100,
-            width: 100,
-            child: Image.asset(
-              image,
-              fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: SizedBox(
+              height: 90.h,
+              width: 90.w,
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
+              ),
             ),
           )
         ],

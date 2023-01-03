@@ -12,20 +12,22 @@ class CartView extends StatelessWidget {
       id: 'cart_view',
       builder: (state) {
         return Scaffold(
-          body: PageView.builder(
-            restorationId: 'cart_view',
-            itemCount: state.cartItems.length,
-            itemBuilder: (context, index) {
-              final cart = state.cartItems[index];
-              return CartItem(
-                index: index,
-                title: cart.title,
-                desc: cart.desc,
-                image: cart.image,
-                price: cart.price,
-                rating: cart.rating,
-              );
-            },
+          body: SizedBox.expand(
+            child: PageView.builder(
+              restorationId: 'cart_view',
+              itemCount: state.cartItems.length,
+              itemBuilder: (context, index) {
+                final cart = state.cartItems[index];
+                return CartItem(
+                  index: index,
+                  title: cart.title,
+                  desc: cart.desc,
+                  image: cart.image,
+                  price: cart.price,
+                  rating: cart.rating,
+                );
+              },
+            ),
           ),
         );
       },

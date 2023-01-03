@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudiee/constants/data.dart';
 import 'package:fudiee/screens/auth/auth_screen.dart';
 import 'package:fudiee/themes/app_colors.dart';
@@ -41,59 +42,62 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: [
-            Expanded(
-              child: PageView.builder(
-                controller: pageController,
-                physics: const BouncingScrollPhysics(),
-                itemCount: onboardingData.length,
-                itemBuilder: (context, index) {
-                  var info = onboardingData[index];
-                  return OnboardingInfo(
-                    image: info.image,
-                    title: info.title,
-                    subtitle: info.subtitle,
-                  );
-                },
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          height: Get.height,
+          child: Column(
+            children: [
+              Expanded(
+                child: PageView.builder(
+                  controller: pageController,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: onboardingData.length,
+                  itemBuilder: (context, index) {
+                    var info = onboardingData[index];
+                    return OnboardingInfo(
+                      image: info.image,
+                      title: info.title,
+                      subtitle: info.subtitle,
+                    );
+                  },
+                ),
               ),
-            ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(29, 0, 29, 25),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  // const Spacer(),
-                  SmoothPageIndicator(
-                    controller: pageController,
-                    count: 3,
-                    effect: ExpandingDotsEffect(
-                      activeDotColor: primaryColor,
-                      dotColor: greyColor,
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.fromLTRB(29, 0, 29, 25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    // const Spacer(),
+                    SmoothPageIndicator(
+                      controller: pageController,
+                      count: 3,
+                      effect: ExpandingDotsEffect(
+                        activeDotColor: primaryColor,
+                        dotColor: greyColor,
+                      ),
+                      onDotClicked: ((index) {
+                        pageController.animateToPage(
+                          index,
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeOut,
+                        );
+                      }),
                     ),
-                    onDotClicked: ((index) {
-                      pageController.animateToPage(
-                        index,
-                        duration: const Duration(seconds: 1),
-                        curve: Curves.easeOut,
-                      );
-                    }),
-                  ),
-                  const SizedBox(height: 29),
-                  AppButton(
-                    text: 'Get Started',
-                    onPressed: () {
-                      Get.toNamed(AuthScreen.routeName);
-                    },
-                  ),
-                ],
-              ),
-            )
-          ],
+                    const SizedBox(height: 29),
+                    AppButton(
+                      text: 'Get Started',
+                      onPressed: () {
+                        Get.toNamed(AuthScreen.routeName);
+                      },
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -135,7 +139,7 @@ class OnboardingInfo extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          padding: const EdgeInsets.fromLTRB(29, 25, 29, 0),
+          padding: EdgeInsets.fromLTRB(29.w, 25.h, 29.w, 0),
           child: OnboardingTitle(
             title: title,
             subtitle: subtitle,
@@ -196,16 +200,18 @@ class OnboardingTitle extends StatelessWidget {
           child: Text(
             title,
             style: Theme.of(context).textTheme.headline4,
+            maxLines: 2,
           ),
         ),
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          height: 10.h,
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.7,
           child: Text(
             subtitle,
             textAlign: TextAlign.left,
+            maxLines: 3,
           ),
         ),
       ],

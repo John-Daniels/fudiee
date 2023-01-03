@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudiee/constants/data.dart';
 import 'package:fudiee/screens/home/widgets/app_header.dart';
 import 'package:fudiee/screens/home/widgets/category_card.dart';
@@ -24,10 +24,10 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
       // height: Get.height,
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 26),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 26.w),
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
@@ -59,7 +59,6 @@ class _HomeViewState extends State<HomeView> {
                     category: category.category,
                     image: category.image,
                     onSelected: (value) {
-                      print(value);
                       setState(() {
                         if (value) {
                           seletedCategory = category.category;

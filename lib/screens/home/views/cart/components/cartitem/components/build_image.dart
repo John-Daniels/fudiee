@@ -19,6 +19,7 @@ class BuildImage extends StatelessWidget {
         bottomRight: Radius.circular(50),
       ),
       child: SizedBox(
+        width: double.infinity,
         height: Get.height * 0.4,
         child: Transform.scale(
           scale: 1.1,

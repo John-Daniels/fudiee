@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fudiee/themes/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,15 +18,15 @@ class AppTheme {
         focusedBorder: defaultInputBorder.copyWith(
           borderSide: BorderSide(color: primaryColor),
         ),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 27,
-          vertical: 20,
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 27.w,
+          vertical: 20.h,
         ),
       ),
       textTheme: Theme.of(context).textTheme.merge(
             GoogleFonts.interTextTheme().copyWith(
               headline4: GoogleFonts.inter(
-                fontSize: 30,
+                fontSize: 30.sp,
                 fontWeight: FontWeight.w700,
                 color: primaryTextColor,
               ),
