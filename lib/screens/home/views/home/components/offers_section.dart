@@ -12,7 +12,7 @@ class OffersSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       // padding: const EdgeInsets.only(left: 26),
-      height: 150.h,
+      height: 158.h,
       child: ListView.separated(
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),

@@ -17,19 +17,20 @@ class AppBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      height: 82.h,
+      height: 80.h,
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: primaryColor.withOpacity(0.2), width: 0.6),
+          top: BorderSide(color: primaryColor.withOpacity(0.4), width: 0.6),
         ),
       ),
       child: BottomNavigationBar(
         currentIndex: currentBottomIndex,
+        landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
         type: BottomNavigationBarType.fixed,
         backgroundColor: scaffoldBgColor,
         fixedColor: primaryColor,
-        unselectedIconTheme: IconThemeData(size: 22.sp),
-        selectedIconTheme: IconThemeData(color: primaryColor, size: 24.sp),
+        unselectedIconTheme: const IconThemeData(size: 22),
+        selectedIconTheme: IconThemeData(color: primaryColor, size: 24),
         selectedLabelStyle: TextStyle(color: primaryColor),
         unselectedItemColor: const Color(0xFF303030).withOpacity(0.7),
         selectedFontSize: 12.sp,

@@ -45,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: Column(
         children: [
           SizedBox(
-            height: Get.height * 0.85,
+            height: Get.height * 0.84,
             child: PageView.builder(
               controller: pageController,
               physics: const BouncingScrollPhysics(),
@@ -60,9 +60,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
             ),
           ),
+          const Spacer(),
           Container(
+            alignment: Alignment.topCenter,
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 29.w),
+            padding: EdgeInsets.fromLTRB(29.w, 0, 29.w, 18.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -83,7 +85,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     );
                   }),
                 ),
-                SizedBox(height: 29.h),
+                SizedBox(height: 25.h),
                 AppButton(
                   text: 'Get Started',
                   onPressed: () {
