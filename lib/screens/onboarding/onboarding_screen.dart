@@ -45,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: Column(
         children: [
           SizedBox(
-            height: Get.height * 0.81,
+            height: Get.height * 0.85,
             child: PageView.builder(
               controller: pageController,
               physics: const BouncingScrollPhysics(),
@@ -83,7 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     );
                   }),
                 ),
-                const SizedBox(height: 29),
+                SizedBox(height: 29.h),
                 AppButton(
                   text: 'Get Started',
                   onPressed: () {

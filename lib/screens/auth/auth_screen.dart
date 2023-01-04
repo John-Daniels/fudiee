@@ -51,7 +51,7 @@ class _AuthScreenState extends State<AuthScreen>
             children: [
               SizedBox(
                 width: double.infinity,
-                height: Get.height * 0.48,
+                height: Get.height * 0.45,
                 child: Image.asset(
                   Assets.authBg,
                   fit: BoxFit.fitWidth,
