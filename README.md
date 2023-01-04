@@ -4,11 +4,13 @@
 
 ## screenshots :)
 
+<div style="display:flex;flex-wrap:wrap;gap:10px;"> 
 <img src="./screenshots/Screenshot_1672672991.png" width='280px' />
 <img src="./screenshots/Screenshot_1672672996.png" width='280px' />
 <img src="./screenshots/Screenshot_1672685526.png" width='280px' />
 <img src="./screenshots/Screenshot_1672672963.png" width='280px' />
 <img src="./screenshots/Screenshot_1672672974.png" width='280px' />
 <img src="./screenshots/Screenshot_1672729669.png" width='280px' />
+</div>
 
 > `Follow @johnkoder on Twitter`

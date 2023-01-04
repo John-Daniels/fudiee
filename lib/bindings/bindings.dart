@@ -6,10 +6,10 @@ import 'package:get/get.dart';
 class InitialBindings extends Bindings {
   @override
   void dependencies() async {
-    await SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.manual,
-      overlays: [],
-    );
+    // await SystemChrome.setEnabledSystemUIMode(
+    //   SystemUiMode.manual,
+    //   overlays: [],
+    // );
 
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(

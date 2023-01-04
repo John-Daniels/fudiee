@@ -91,18 +91,16 @@ List<Cart> cartData = [
   Cart(
     image: Assets.veggiePizza,
     title: 'Veggie Pizza',
-    desc: '''Our Veggie Pizza is baked specially for you, with pure
-natural and fresh ingredients to satisfy your cravings 
-while maintaining your healthy living.''',
+    desc:
+        '''Our Veggie Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.''',
     price: 15,
     rating: 3.5,
   ),
   Cart(
     image: Assets.meatPizza,
     title: 'Meat Pizza',
-    desc: '''Our Meat Pizza is baked specially for you, with pure
-natural and fresh ingredients to satisfy your cravings 
-while maintaining your healthy living.''',
+    desc:
+        '''Our Meat Pizza is baked specially for you, with pure natural and fresh ingredients to satisfy your cravings while maintaining your healthy living.''',
     price: 20,
     rating: 4.5,
   ),

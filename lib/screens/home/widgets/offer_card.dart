@@ -25,7 +25,7 @@ class OfferCard extends StatelessWidget {
         color: primaryColor,
         borderRadius: BorderRadius.circular(14),
       ),
-      padding: const EdgeInsets.fromLTRB(18, 28, 12, 16),
+      padding: EdgeInsets.fromLTRB(18.w, 28.h, 12.w, 16.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,11 +34,11 @@ class OfferCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 5),
+              SizedBox(height: 5.h),
               Text(
                 '${percentOff.toStringAsFixed(0)}%',
-                style: const TextStyle(
-                  fontSize: 14,
+                style: TextStyle(
+                  fontSize: 14.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -49,7 +49,7 @@ class OfferCard extends StatelessWidget {
                 child: Text(
                   offer,
                   style: TextStyle(
-                    fontSize: 9,
+                    fontSize: 9.sp,
                     fontWeight: FontWeight.w300,
                     color: Colors.white.withOpacity(0.9),
                   ),
@@ -63,7 +63,7 @@ class OfferCard extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  minimumSize: const Size(50, 34),
+                  minimumSize: Size(50.w, 34.h),
                   backgroundColor: const Color(0xFFD9D9D9),
                 ),
                 onPressed: onPressed,

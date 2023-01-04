@@ -42,63 +42,58 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SizedBox(
-          width: double.infinity,
-          height: Get.height,
-          child: Column(
-            children: [
-              Expanded(
-                child: PageView.builder(
+      body: Column(
+        children: [
+          SizedBox(
+            height: Get.height * 0.81,
+            child: PageView.builder(
+              controller: pageController,
+              physics: const BouncingScrollPhysics(),
+              itemCount: onboardingData.length,
+              itemBuilder: (context, index) {
+                var info = onboardingData[index];
+                return OnboardingInfo(
+                  image: info.image,
+                  title: info.title,
+                  subtitle: info.subtitle,
+                );
+              },
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 29.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                // const Spacer(),
+                SmoothPageIndicator(
                   controller: pageController,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: onboardingData.length,
-                  itemBuilder: (context, index) {
-                    var info = onboardingData[index];
-                    return OnboardingInfo(
-                      image: info.image,
-                      title: info.title,
-                      subtitle: info.subtitle,
+                  count: 3,
+                  effect: ExpandingDotsEffect(
+                    activeDotColor: primaryColor,
+                    dotColor: greyColor,
+                  ),
+                  onDotClicked: ((index) {
+                    pageController.animateToPage(
+                      index,
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.easeOut,
                     );
+                  }),
+                ),
+                const SizedBox(height: 29),
+                AppButton(
+                  text: 'Get Started',
+                  onPressed: () {
+                    Get.toNamed(AuthScreen.routeName);
                   },
                 ),
-              ),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.fromLTRB(29, 0, 29, 25),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    // const Spacer(),
-                    SmoothPageIndicator(
-                      controller: pageController,
-                      count: 3,
-                      effect: ExpandingDotsEffect(
-                        activeDotColor: primaryColor,
-                        dotColor: greyColor,
-                      ),
-                      onDotClicked: ((index) {
-                        pageController.animateToPage(
-                          index,
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeOut,
-                        );
-                      }),
-                    ),
-                    const SizedBox(height: 29),
-                    AppButton(
-                      text: 'Get Started',
-                      onPressed: () {
-                        Get.toNamed(AuthScreen.routeName);
-                      },
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

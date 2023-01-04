@@ -16,10 +16,11 @@ class AppBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
+      alignment: Alignment.topCenter,
+      height: 82.h,
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: primaryColor.withOpacity(0.8), width: 0.6),
+          top: BorderSide(color: primaryColor.withOpacity(0.2), width: 0.6),
         ),
       ),
       child: BottomNavigationBar(
@@ -27,8 +28,8 @@ class AppBottomBar extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         backgroundColor: scaffoldBgColor,
         fixedColor: primaryColor,
-        unselectedIconTheme: const IconThemeData(size: 22),
-        selectedIconTheme: IconThemeData(color: primaryColor, size: 24),
+        unselectedIconTheme: IconThemeData(size: 22.sp),
+        selectedIconTheme: IconThemeData(color: primaryColor, size: 24.sp),
         selectedLabelStyle: TextStyle(color: primaryColor),
         unselectedItemColor: const Color(0xFF303030).withOpacity(0.7),
         selectedFontSize: 12.sp,

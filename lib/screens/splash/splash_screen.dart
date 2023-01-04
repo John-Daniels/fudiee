@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:fudiee/constants/assets_constant.dart';
 import 'package:fudiee/screens/onboarding/onboarding_screen.dart';
 import 'package:get/get.dart';
@@ -22,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
       () {
         Get.offAllNamed(OnboardingScreen.routeName);
-        SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+        // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       },
     );
     super.initState();
